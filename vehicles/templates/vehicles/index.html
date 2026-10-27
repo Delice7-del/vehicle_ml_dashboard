@@ -15,6 +15,13 @@
         .nav-pills .nav-link.active {
             background-color: #0d6efd;
         }
+        .table thead th {
+            background-color: #0d6efd;
+            color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#dashboard-nav" data-bs-offset="100" tabindex="0">
@@ -25,6 +32,12 @@
                 <div id="dashboard-nav" class="list-group position-sticky top-0">
                     <a class="list-group-item list-group-item-action" href="#frequency-table">
                         Frequency Tables (One-way)
+                    </a>
+                    <a class="list-group-item list-group-item-action" href="#expensive-vehicles-table">
+                        Expensive Vehicles (> $5,000)
+                    </a>
+                    <a class="list-group-item list-group-item-action" href="#groupby-table">
+                        Grouped by Manufacturer & Transmission
                     </a>
                 </div>
             </div>
@@ -37,11 +50,35 @@
                     <h1 class="text-center text-primary mb-4"> Vehicle Machine Learning Dashboard </h1>
 
                     <div id="frequency-table" class="card shadow mb-5">
-                        <div class="card-header bg-info text-white">
+                        <div class="card-header bg-primary text-white">
                             Frequency Tables (One-way)
                         </div>
                         <div class="card-body">
                             {{ frequency_table|safe }}
+                        </div>
+                    </div>
+
+                    <!-- Expensive Vehicles Table -->
+                    <div id="expensive-vehicles-table" class="card shadow mb-5">
+                        <div class="card-header bg-primary text-white">
+                            Expensive Vehicles (Price > $5,000)
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive" style="max-height: 450px; overflow-y: auto;">
+                                {{ expensive_vehicles_table|safe }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Group By Table -->
+                    <div id="groupby-table" class="card shadow mb-5">
+                        <div class="card-header bg-primary text-white">
+                            Grouped by Manufacturer & Transmission (Average Price)
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive" style="max-height: 450px; overflow-y: auto;">
+                                {{ groupby_table|safe }}
+                            </div>
                         </div>
                     </div>
 

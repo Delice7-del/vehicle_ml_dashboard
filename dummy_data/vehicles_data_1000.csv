@@ -1,4 +1,4 @@
-id,manufacturer,model,year,fuel_type,transmission,color,price,mileage,condition
+id,manufacturer,model,year,fuel_type,transmission,color,selling_price,mileage,condition
 1,Toyota,Camry,2018,Petrol,Automatic,White,18500,45000,Good
 2,Honda,Civic,2020,Petrol,Manual,Black,22000,15000,Excellent
 3,Ford,Mustang,2017,Petrol,Manual,Red,28000,60000,Good
